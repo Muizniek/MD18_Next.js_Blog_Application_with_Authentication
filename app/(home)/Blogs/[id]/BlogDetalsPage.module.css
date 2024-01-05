@@ -1,0 +1,27 @@
+.card_wrapper {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.comments_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 2px solid;
+  padding: 10px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+.comments_form h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.blog_delete {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+}

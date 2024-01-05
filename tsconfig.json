@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/Blogs/[id]/page.tsx", "app/api/blogs/route.js", "app/(auth)/login/page.jsx", "app/(auth)/AuthForm.jsx", "app/(auth)/signup/page.jsx", "app/Components/NavBar/NavBar.jsx", "app/(home)/layout.jsx", "app/(auth)/layout.jsx", "app/middleware.js", "app/(home)/Blogs/create/CreateForm.tsx", "app/(home)/Blogs/[id]/DeleteButton.jsx", "app/(home)/Blogs/[id]/page.tsx", "app/(home)/Blogs/actions.js", "app/(home)/error.jsx"],
   "exclude": ["node_modules"]
 }

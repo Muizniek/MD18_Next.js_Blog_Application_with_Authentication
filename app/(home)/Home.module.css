@@ -1,0 +1,30 @@
+.cards_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cards_wrapper .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.main h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 10px;
+}
