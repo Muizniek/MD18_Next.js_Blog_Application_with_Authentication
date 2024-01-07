@@ -36,7 +36,7 @@ const BlogList = async () => {
               <Link href={`/Blogs/${blog.id}`} key={blog.id}>
                 <img src={blog.image} alt={`image for ${blog.title}`} />
                 <h3>{blog.title}</h3>
-                <p>{blog.body.slice(0, 200)}...</p>
+                <div dangerouslySetInnerHTML={{ __html: blog.body.slice(0, 200) }}></div>
                 <div className={`priority_${blog.priority}`}>
                   {blog.priority} priority
                 </div>

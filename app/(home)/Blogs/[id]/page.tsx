@@ -77,17 +77,18 @@ const BlogDetails: FC<BlogDetailsProps> = async ({ params }) => {
           <img src={blog.image} alt="" />
           <h3>{blog.title}</h3>
           <small>Created by {blog.user_email}</small>
-          <p>{blog.body}</p>
+          <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
         </div>
       </div>
 
-      <div className={css.comments_comentsform}>
+      <div>
         <div>
           <h4>Comments:</h4>
-          <ul>
+          <ul className={css.comments_comentsform}>
             {comments.map((comment) => (
-              <li key={comment.id}>
-                <strong>{comment.user_email}</strong> {comment.comment_body}
+              <li className={css.li} key={comment.id}>
+                <strong>{comment.user_email}</strong>
+                <div dangerouslySetInnerHTML={{ __html: comment.comment_body }}></div>
               </li>
             ))}
           </ul>

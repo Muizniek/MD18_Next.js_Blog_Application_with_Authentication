@@ -35,6 +35,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 
+Pievienot info par to kā palais projektu. 
+
 
 GET /blogs/:id
 Description: Fetches details of a specific blog post.

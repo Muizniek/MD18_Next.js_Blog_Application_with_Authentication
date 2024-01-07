@@ -1,10 +1,34 @@
+"use client";
+
+import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import css from "./create.module.css";
 import { addBlog } from "../actions";
 import SubmitButton from "@/app/Components/SubmitButton";
+import { toolbarOptions } from "../../../Components/ReactQuill/toolBarOptions";
 
 const CreateForm = () => {
+  const [body, setBody] = useState("");
+
+  const handleBodyChange = (content: React.SetStateAction<string>) => {
+    setBody(content);
+  };
+
+  const handleSubmit = async (event: {
+    preventDefault: () => void;
+    currentTarget: HTMLFormElement | undefined;
+  }) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    formData.set("body", body);
+
+    await addBlog(formData);
+  };
+
   return (
-    <form action={addBlog} className={css.form}>
+    <form onSubmit={handleSubmit} className={css.form}>
       <label>
         <span>Image:</span>
         <input name="image" required type="text" />
@@ -13,10 +37,13 @@ const CreateForm = () => {
         <span>Title:</span>
         <input name="title" required type="text" />
       </label>
-      <label>
-        <span>Body:</span>
-        <textarea name="body" required />
-      </label>
+      <span>Body:</span>
+      <ReactQuill
+        value={body}
+        onChange={handleBodyChange}
+        modules={toolbarOptions}
+      />
+      <br />
       <label>
         <span>Priority:</span>
         <select name="priority">
